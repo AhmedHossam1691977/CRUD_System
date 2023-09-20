@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUDs Operation</title>
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="h3 text-center mt-4 fw-bold">Product Management System</h1>
+      <form>
+        <label for="productName">Product Name :</label>
+        <input
+          type="text"
+          id="productName"
+          placeholder="Ex: Toshiba"
+          class="form-control mb-3 mt-2"
+        />
+
+        <label for="productPrice">Product Price :</label>
+        <input
+          type="number"
+          id="productPrice"
+          placeholder="Ex: 5000"
+          class="form-control mb-3 mt-2"
+        />
+
+        <label for="productCategory">Product Category :</label>
+        <input
+          type="text"
+          id="productCategory"
+          placeholder="Ex: Mobile"
+          class="form-control mb-3 mt-2"
+        />
+
+        <label for="productDescription">Product Description :</label>
+        <textarea
+          class="form-control mb-3 mt-2"
+          id="productDescription"
+          placeholder="Message"
+        ></textarea>
+
+        <button
+          type="button"
+          class="btn d-block btn-primary w-100 text-center"
+          onclick="addProduct()"
+          id="addBtn"
+        >
+          Add Product
+        </button>
+        <button
+          type="button"
+          class="btn d-block d-none btn-warning w-100 text-center"
+          onclick="updateProduct()"
+          id="updateBtn"
+        >
+          Update Product
+        </button>
+      </form>
+
+      <input
+        type="text"
+        class="form-control mt-4 mx-auto w-75"
+        placeholder="Search Products by Name ..."
+        oninput="searchProducts(this.value)"
+      />
+
+      <div class="table-responsive">
+        <table class="table table-striped table-hover text-center mt-5">
+          <thead class="table-dark">
+            <th>Index</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="./Js/index.js"></script>
+  </body>
+</html>
